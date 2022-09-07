@@ -1,0 +1,13 @@
+{
+  "name": "Conflux-dApp-Utils",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:zandent/Conflux-dApp-Utils.git",
+  "author": "zandent <simonzihan@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@ethersproject/bignumber": "^5.7.0",
+    "dotenv": "^16.0.2",
+    "web3": "^1.7.5"
+  }
+}
