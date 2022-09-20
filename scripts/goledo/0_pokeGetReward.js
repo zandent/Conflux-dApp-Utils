@@ -9,8 +9,8 @@ if (specs.network == 'espacetestnet') {
 }else{
   addresses = require('./espaceConfig.json');
 }
-const POKEPERIOD = 100; // 100 secs
-const CHECKPERIOD = 5000; //5 secs
+const POKEPERIOD = 86400000; // 1 day
+const CHECKPERIOD = 3600000; // 1 hour
 let contract = require(`../../ABIs/goledo/MultiFeeDistribution.sol/MultiFeeDistribution.json`);
 contract.instance = new w3.eth.Contract(contract.abi);
 contract.instance.options.address = addresses.MultiFeeDistribution;
@@ -47,13 +47,21 @@ async function run() {
   while (1) {
     if (currentTime - lastTime > POKEPERIOD) {
       data = contract.instance.methods.getReward([addresses.GoledoToken, addresses.Markets['CFX']['atoken'], addresses.Markets['USDT']['atoken'], addresses.Markets['WETH']['atoken'], addresses.Markets['WBTC']['atoken']]).encodeABI();
-      await ethTransact(data, contract.instance.options.address, nonce, specs.privateKey, account);
+      try {
+        await ethTransact(data, contract.instance.options.address, nonce, specs.privateKey, account);
+      } catch (error) {
+        console.log(">> getReward() Failed. Resume next cycle.");
+      }
       console.log(">> ✅ getReward() Done.");
       nonce = nonce + 1;
       lastTime = currentTime;
     }
     await config.delay(CHECKPERIOD);
-    lastestBlk = await w3.eth.getBlock('latest');
+    try {
+      lastestBlk = await w3.eth.getBlock('latest');
+    }catch (error) {
+      console.log(">> get timestamp Failed. Resume next cycle.");
+    }
     console.log("Current timestamp: ", lastestBlk.timestamp);
     currentTime = lastestBlk.timestamp;
   }
