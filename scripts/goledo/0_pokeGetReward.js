@@ -9,7 +9,7 @@ if (specs.network == 'espacetestnet') {
 }else{
   addresses = require('./espaceConfig.json');
 }
-const POKEPERIOD = 86400000; // 1 day
+const POKEPERIOD = 86400; // 1 day
 const CHECKPERIOD = 3600000; // 1 hour
 let contract = require(`../../ABIs/goledo/MultiFeeDistribution.sol/MultiFeeDistribution.json`);
 contract.instance = new w3.eth.Contract(contract.abi);
@@ -44,6 +44,14 @@ async function run() {
   let lastTime = lastestBlk.timestamp;
   let currentTime = lastestBlk.timestamp;
   let nonce = await w3.eth.getTransactionCount(account);
+  data = contract.instance.methods.getReward([addresses.GoledoToken, addresses.Markets['CFX']['atoken'], addresses.Markets['USDT']['atoken'], addresses.Markets['WETH']['atoken'], addresses.Markets['WBTC']['atoken']]).encodeABI();
+  try {
+    await ethTransact(data, contract.instance.options.address, nonce, specs.privateKey, account);
+  } catch (error) {
+    console.log(">> getReward() Failed. Resume next cycle.");
+  }
+  nonce = nonce + 1;
+  console.log(">> ✅ getReward() Done.");
   while (1) {
     if (currentTime - lastTime > POKEPERIOD) {
       data = contract.instance.methods.getReward([addresses.GoledoToken, addresses.Markets['CFX']['atoken'], addresses.Markets['USDT']['atoken'], addresses.Markets['WETH']['atoken'], addresses.Markets['WBTC']['atoken']]).encodeABI();
