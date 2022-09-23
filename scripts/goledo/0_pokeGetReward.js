@@ -52,17 +52,22 @@ async function run() {
   }
   nonce = nonce + 1;
   console.log(">> ✅ getReward() Done.");
+  let failflag = false;
   while (1) {
     if (currentTime - lastTime > POKEPERIOD) {
       data = contract.instance.methods.getReward([addresses.GoledoToken, addresses.Markets['CFX']['atoken'], addresses.Markets['USDT']['atoken'], addresses.Markets['WETH']['atoken'], addresses.Markets['WBTC']['atoken']]).encodeABI();
       try {
         await ethTransact(data, contract.instance.options.address, nonce, specs.privateKey, account);
+        failflag = false;
       } catch (error) {
         console.log(">> getReward() Failed. Resume next cycle.");
+        failflag = true;
       }
-      console.log(">> ✅ getReward() Done.");
-      nonce = nonce + 1;
-      lastTime = currentTime;
+      if (failflag == false){
+        console.log(">> ✅ getReward() Done.");
+        nonce = nonce + 1;
+        lastTime = currentTime;
+      }
     }
     await config.delay(CHECKPERIOD);
     try {
