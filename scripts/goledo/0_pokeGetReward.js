@@ -9,8 +9,8 @@ if (specs.network == 'espacetestnet') {
 }else{
   addresses = require('./espaceConfig.json');
 }
-const POKEPERIOD = 86400; // 1 day
-const CHECKPERIOD = 3600000; // 1 hour
+const POKEPERIOD = 86400; // 1 day 86400
+const CHECKPERIOD = 3600000; // 1 hour 3600000
 let contract = require(`../../ABIs/goledo/MultiFeeDistribution.sol/MultiFeeDistribution.json`);
 contract.instance = new w3.eth.Contract(contract.abi);
 contract.instance.options.address = addresses.MultiFeeDistribution;
