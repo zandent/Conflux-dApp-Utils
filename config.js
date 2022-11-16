@@ -9,7 +9,6 @@ const specs = {
     nodeUrl: 'http://evmtestnet.confluxrpc.com',
     // network: 'espace',
     // nodeUrl: 'http://evm.confluxrpc.com',
-    MultiFeeDistributionAddress: "0x37a14Ffbad9283A3d4d5400d3bDAEDbB19664d64", //undet espacetestnet
 };
 
 function delay(time) {
