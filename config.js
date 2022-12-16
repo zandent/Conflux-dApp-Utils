@@ -5,10 +5,10 @@ if (typeof(_privateKey) == "undefined") {
 }
 const specs = {
     privateKey: _privateKey,
-    network: 'espacetestnet',
-    nodeUrl: 'http://evmtestnet.confluxrpc.com',
-    // network: 'espace',
-    // nodeUrl: 'http://evm.confluxrpc.com',
+    // network: 'espacetestnet',
+    // nodeUrl: 'http://evmtestnet.confluxrpc.com',
+    network: 'espace',
+    nodeUrl: 'http://evm.confluxrpc.com',
 };
 
 function delay(time) {
