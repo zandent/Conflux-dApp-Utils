@@ -13,8 +13,9 @@ if (specs.network == 'espacetestnet') {
 let contract = require(`../../ABIs/IERC20.sol/IERC20.json`);
 contract.instance = new w3.eth.Contract(contract.abi);
 contract.instance.options.address = addresses.GoledoToken;
-let balanceExpected = w3.utils.toWei('400000000');
-let recvInfos = [['0x8f166C625B37B81627546cCF3D02A9caf0176Df6',w3.utils.toWei('140000000')],['0x4bEac46B98bfCb25d9B4F7B3Eebb7D68a9DcfbB6',w3.utils.toWei('40000000')],['0xe48bfBE83dADEdda294f43eF387dd6c72f1fD3cE',w3.utils.toWei('7000000')],['0x645Ba643625983700793931eA54cba873A321c30',w3.utils.toWei('150000000')]];
+let balanceExpected = w3.utils.toWei('6999999');
+let recvInfos = [['0x8f166C625B37B81627546cCF3D02A9caf0176Df6',w3.utils.toWei('1166666')],['0x4bEac46B98bfCb25d9B4F7B3Eebb7D68a9DcfbB6',w3.utils.toWei('4000000')],['0xe48bfBE83dADEdda294f43eF387dd6c72f1fD3cE',w3.utils.toWei('583333')],['0x645Ba643625983700793931eA54cba873A321c30',w3.utils.toWei('1250000')]];
+
 async function ethTransact(data, to = undefined, nonce, key, sender, value = 0) {
   let gasPrice = BigNumber.from(await w3.eth.getGasPrice());
   gasPrice = gasPrice.mul(110).div(100).toString();
@@ -58,6 +59,10 @@ async function run() {
     }
     console.log(">> ✅ Transfer success!");
     nonce = nonce + 1;
+  }
+  for (var i=0; i < recvInfos.length; i++) {
+    let receiverBalance = await contract.instance.methods.balanceOf(recvInfos[i][0]).call();
+    console.log("👉 Receiver:", recvInfos[i][0], "balance is", receiverBalance.toString());
   }
 }
 
