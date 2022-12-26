@@ -105,7 +105,7 @@ async function run() {
       await axios.post("https://galxe-sync.herokuapp.com/api/v1/update/goledo", {
         rawList: mesonAccountsAddressesListAboveThreshold
       }).then((response) => {
-        console.log(response);
+        console.log("✅ Submit Succeed.");
       })
       .catch((error) => {
         console.log(error);
