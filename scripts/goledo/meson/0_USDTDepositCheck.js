@@ -55,6 +55,7 @@ async function run() {
     await axios.get('https://explorer.meson.fi/api/v1/swap/cashBack')
     .then((response) => {
       mesonAccountsAddressesList = response.data.result.map(item => item.fromTo[0]);
+      mesonAccountsAddressesList = [... new Set(mesonAccountsAddressesList)];
     })
     .catch((error) => {
       // handle error
@@ -129,6 +130,7 @@ async function run() {
         await axios.get('https://explorer.meson.fi/api/v1/swap/cashBack')
         .then((response) => {
           mesonAccountsAddressesList = response.data.result.map(item => item.fromTo[0]);
+          mesonAccountsAddressesList = [... new Set(mesonAccountsAddressesList)];
         })
         .catch((error) => {
           // handle error
