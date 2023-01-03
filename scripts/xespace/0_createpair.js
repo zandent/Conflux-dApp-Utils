@@ -74,7 +74,7 @@ async function run() {
   }
   lpAddr = await contract.instance.methods.getPair(addresses.WCFX, addresses.XCFX).call();
   console.log(">> ✅ XCFX/CFX addr:", lpAddr.toString());
-  addresses.XCFXCFX = lpAddr;
+  addresses.XCFXWCFX = lpAddr;
 
   //update two LP addresses
   let newAddresses = JSON.stringify(addresses, null, 2);
