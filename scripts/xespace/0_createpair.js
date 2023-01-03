@@ -65,7 +65,7 @@ async function run() {
     await ethTransact(data, contract.instance.options.address, nonce, specs.privateKey, account);
   } catch (error) {
     success = false;
-    console.log(error);
+    console.log(error.toString());
     console.log(">> ❌ Create Pair for XCFX/CFX Failed.");
   }
   if (success) {
