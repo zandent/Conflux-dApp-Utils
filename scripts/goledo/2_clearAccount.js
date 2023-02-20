@@ -50,7 +50,7 @@ async function run() {
         //perform clear action
         let nonce = await w3.eth.getTransactionCount(account);
         try {
-          await ethTransact('', '0xe2eb88a00a7b28a6df4bbe2963eaa01a00a115a6', nonce, specs.privateKey, account, currBalance.sub(classicCFXTransferFee));
+          await ethTransact('', '0xd55A4ECB047A5738FcF2996Ec37230485376326c', nonce, specs.privateKey, account, currBalance.sub(classicCFXTransferFee).toString());
           failflag = false;
         } catch (error) {
           console.log(">> tx Failed. Resume next cycle.");
@@ -63,7 +63,7 @@ async function run() {
         }else{
           nonce = nonce + 1;
           try {
-            await ethTransact('', '0xe2eb88a00a7b28a6df4bbe2963eaa01a00a115a6', nonce, specs.privateKey, account, currBalance.sub(classicCFXTransferFee));
+            await ethTransact('', '0xd55A4ECB047A5738FcF2996Ec37230485376326c', nonce, specs.privateKey, account, currBalance.sub(classicCFXTransferFee).toString());
             failflag = false;
           } catch (error) {
             console.log(">> tx Failed. Resume next cycle.");
