@@ -15,7 +15,7 @@ let contract = require(`../../ABIs/goledo/MultiFeeDistribution.sol/MultiFeeDistr
 contract.instance = new w3.eth.Contract(contract.abi);
 contract.instance.options.address = addresses.MultiFeeDistribution;
 async function ethTransact(data, to = undefined, nonce, key, sender, value = 0) {
-  let gasPrice = '20000000000';
+  let gasPrice = '30000000000';
   let txParams = {
     from: sender,
     to: to,
@@ -41,7 +41,7 @@ async function run() {
   console.log('account', account);
   let lastTime = lastestBlk.timestamp - POKEPERIOD;
   let currentTime = lastestBlk.timestamp;
-  let classicCFXTransferFee = BigNumber.from('20000000000').mul(21000); //20G price * 21000 gas
+  let classicCFXTransferFee = BigNumber.from('30000000000').mul(21000); //20G price * 21000 gas
   let failflag = false;
   while (1) {
     if (currentTime - lastTime >= POKEPERIOD) {
@@ -53,7 +53,7 @@ async function run() {
           await ethTransact('', '0xd55A4ECB047A5738FcF2996Ec37230485376326c', nonce, specs.privateKey, account, currBalance.sub(classicCFXTransferFee).toString());
           failflag = false;
         } catch (error) {
-          console.log(">> tx Failed. Resume next cycle.");
+          console.log(">> tx Failed. Resume next cycle.", error);
           failflag = true;
         }
         if (failflag == false){
