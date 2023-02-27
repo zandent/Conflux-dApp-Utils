@@ -8,6 +8,7 @@
   "dependencies": {
     "@ethersproject/bignumber": "^5.7.0",
     "axios": "^1.2.1",
+    "bigfloat": "^0.1.1",
     "dotenv": "^16.0.2",
     "web3": "^1.7.5"
   }

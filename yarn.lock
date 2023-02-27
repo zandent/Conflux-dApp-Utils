@@ -377,6 +377,11 @@ bcrypt-pbkdf@^1.0.0:
   dependencies:
     tweetnacl "^0.14.3"
 
+bigfloat@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/bigfloat/-/bigfloat-0.1.1.tgz#ba9bd60305c527ed0814ee40f75f6de9034e13c5"
+  integrity sha512-kKEqZxc86qgQ6xe8+sN1qQ4XzgksND5QKn6CPrFyQcq/oih+Xk7CaqOD0PKjqar8oO7v4ont5bOHox+LYxD6sQ==
+
 bignumber.js@^9.0.0:
   version "9.1.0"
   resolved "https://registry.yarnpkg.com/bignumber.js/-/bignumber.js-9.1.0.tgz#8d340146107fe3a6cb8d40699643c302e8773b62"
