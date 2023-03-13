@@ -76,6 +76,23 @@ async function run() {
   console.log(">> ✅ XCFX/CFX addr:", lpAddr.toString());
   addresses.XCFXWCFX = lpAddr;
 
+  data = contract.instance.methods.createPair(addresses.XCFX, addresses.NUT).encodeABI();
+  success = true;
+  try {
+    await ethTransact(data, contract.instance.options.address, nonce, specs.privateKey, account);
+  } catch (error) {
+    success = false;
+    console.log(error.toString());
+    console.log(">> ❌ Create Pair for XCFX/NUT Failed.");
+  }
+  if (success) {
+    nonce = nonce + 1;
+    console.log(">> ✅ Create Pair for XCFX/NUT Done.");
+  }
+  lpAddr = await contract.instance.methods.getPair(addresses.XCFX, addresses.NUT).call();
+  console.log(">> ✅ XCFX/CFX addr:", lpAddr.toString());
+  addresses.XCFXNUT = lpAddr;
+
   //update two LP addresses
   let newAddresses = JSON.stringify(addresses, null, 2);
   fs.writeFileSync(fileName, newAddresses);
