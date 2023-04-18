@@ -9,6 +9,7 @@ const specs = {
     // nodeUrl: 'http://evmtestnet.confluxrpc.com',
     network: 'espace',
     nodeUrl: 'http://evm.confluxrpc.com',
+    apikey: process.env.ETHERSCAN_API_KEY,
 };
 
 function delay(time) {

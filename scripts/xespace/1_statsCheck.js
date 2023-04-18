@@ -50,8 +50,9 @@ async function run() {
   let totalCFX = BigNumber.from(summary.totalxcfxs).mul(ratio).div(BigNumber.from('1000000000000000000')).div(10000000).toString();
   console.log(`-----Nucleon-----`);
   console.log(">> total CFX staked:", totalCFX);
+  // return;
   let i = 1;
-  scanUrl = 'https://evmapi.confluxscan.net/api?module=account&action=txlist&address=0x808f81acc4618a05c8253a7b41240468c08cd64c&startblock=64352485';
+  scanUrl = `https://evmapi.confluxscan.net/api?module=account&action=txlist&address=0x808f81acc4618a05c8253a7b41240468c08cd64c&startblock=64352485&apikey=${specs.apikey}`;
   var response = await fetch(scanUrl+`&page=${i}&sort=desc`);
   var dataPerPage = await response.json(); //extract JSON from the http response
   // console.log(dataPerPage);
@@ -78,10 +79,11 @@ async function run() {
     i = i + 1;
    response = await fetch(scanUrl+`&page=${i}&sort=desc`);
    dataPerPage = await response.json(); 
+  //  console.log(`total length ${dataPerPage.result.length}`);
 }
 console.log(">> Number of stakers:", accountsCaptured.length);
 i = 1;
-  scanUrl = 'https://evmapi.confluxscan.net/api?module=account&action=txlist&address=0xeced26633b5c2d7124b5eae794c9c32a8b8e7df2&startblock=64357340';
+  scanUrl = `https://evmapi.confluxscan.net/api?module=account&action=txlist&address=0xeced26633b5c2d7124b5eae794c9c32a8b8e7df2&startblock=64357340&apikey=${specs.apikey}`;
   var response = await fetch(scanUrl+`&page=${i}&sort=desc`);
   var dataPerPage = await response.json(); //extract JSON from the http response
   // console.log(dataPerPage);
@@ -95,7 +97,11 @@ i = 1;
         }
         }
     }
+    // console.log(`total length ${dataPerPage.result.length}`);
     i = i + 1;
+    // console.log(`wait 5 seconds`);
+    // await config.delay(5000);
+    // console.log(`wait 5 seconds done`);
    response = await fetch(scanUrl+`&page=${i}&sort=desc`);
    dataPerPage = await response.json(); 
 }
