@@ -8,10 +8,10 @@ const w3 = new Web3(specs.nodeUrl);
 let addresses;
 if (specs.network == 'espacetestnet') {
   fileName = './scripts/xespace/contractAddressPublicTestnet.json';
-  addresses = require('./contractAddressPublicTestnet.json');
+  addresses = require('./scripts/xespace/contractAddressPublicTestnet.json');
 }else{
   fileName = './scripts/xespace/contractAddressMainnet.json';
-  addresses = require('./contractAddressMainnet.json');
+  addresses = require('./scripts/xespace/contractAddressMainnet.json');
 }
 
 let Exchangeroom = require(`../../ABIs/Exchangeroom.sol/Exchangeroom.json`);

@@ -1,5 +1,6 @@
 {
   "WCFX": "0x2ed3dddae5b2f321af0806181fbfa6d049be47d8",
+  "USDT": "0x7d682e65efc5c13bf4e394b8f376c48e6bae0355",
   "FaucetETH": "0xcd71270f82f319e0498ff98af8269c3f0d547c65",
   "FaucetBTC": "0x54593e02c39aeff52b166bd036797d2b1478de8d",
   "FaucetUSDT": "0x7d682e65efc5c13bf4e394b8f376c48e6bae0355",
@@ -28,6 +29,109 @@
   "MultiRewardPool": "0x7950a0f02463bcd42bd0a2932940eaed86512f81",
   "RandomNumberGenerator": "0xa7f16f8c9496866d9f39b794bf23177381ec0c57",
   "SwappiLottery": "0x466241eb27177ae33ebad2868a07addff35681f1",
+  "SwappiFactoryStable": "0x6f8717ac309a1efa789f13e098207cebdc969be7",
+  "SwappiRouterStable": "0xd959b03fe5c1fd13a45d848751c5130831eb7784",
+  "StableWCFXUSDT": "0xce4eabb691c6659be096ba07789ce994dd551ae5",
+  "UniswapV3Factory": "0x7b972b7302e16fc8838bd69bc49a19911b7887bb",
+  "UniswapV3SwapRouter": "0x7d76b91d7e24be0088cab406ce2792a911914381",
+  "UniswapV3NonfungibleTokenPositionDescriptor": "0x3c999c00ad36afd659213ed73ee5f112219b0075",
+  "UniswapV3NonfungiblePositionManager": "0xab4fa0d8a8dc3e2fb713a786248ce782bdae7111",
+  "UniswapV3Staker": "0x8a2b815d84da33e270d20cfb2eac26cfb55c1e38",
+  "UniswapV3StakerImpl": "0x537d7d7b03f4dca8e8703fe9bb9cc5701925bbf8",
+  "UniswapV3StakerBeacon": "0xd3201caf84d51db70af4030a115ceb9d13d45e6b",
+  "UniswapV3VotingEscrow": "0xae50576fd9110674994263e0313260c7e89c1143",
+  "UniswapV3VotingEscrowImpl": "0xd6b829322018941b602966b104a0ac3d10c22751",
+  "UniswapV3VotingEscrowBeacon": "0x4540c4e03c3666b7543719fc1325008c4d5d769f",
+  "WCFXUSDT": "0x5579eB5927FF51c9d790404162c951F0FFFa2D42",
+  "UniswapV3Quoter": "0xeb6775b690664d9c2238697c1e4c925f60f7bc60",
+  "UniswapV3NFTDescriptor": "0x3f06d87abbf585cabc035d9e66ef58b800a988ce",
+  "UniswapV3PPI": "0x2c0230516cfcddcd2a5256400c4593deaa243259",
+  "VSTUSDT": "0xb99983baDa4643f78cE4c5c6a26cd9eD8467Bc94",
+  "UniswapV3TickLens": "0x825aafa61a084fcb0eb99c481ac22d24e8ea7f36",
+  "Markets": {
+    "WCFX": {
+      "token": "0x2ed3dddae5b2f321af0806181fbfa6d049be47d8",
+      "poolWithUSDT500": "0x5DF78d4A66534cFfcCFd8ad51945c75990E2052C",
+      "poolWithUSDT3000": "0x5579eB5927FF51c9d790404162c951F0FFFa2D42",
+      "poolWithUSDT10000": "0x75677DEadc20a4E85800c4F054c51B58f4d9794F",
+      "initPrice": "50557300000000000000000000000"
+    },
+    "ETH": {
+      "token": "0xcd71270f82f319e0498ff98af8269c3f0d547c65",
+      "poolWithUSDT500": "0x1922e18A9ADd85BA4668dA566CDAf65bb4b38985",
+      "poolWithUSDT3000": "0xE21507974713Fed8a3D448820F0ee4408F8870a9",
+      "poolWithUSDT10000": "0x264025Ca6a820f206dF90bb288508Add160C5b8f",
+      "initPrice": "1822420876035758706674966937"
+    },
+    "BTC": {
+      "token": "0x54593e02c39aeff52b166bd036797d2b1478de8d",
+      "poolWithUSDT500": "0x18C5552e41EdC287c812fa9E3FF8977465CE0A6b",
+      "poolWithUSDT3000": "0x10Cf6ae959bB3C24C2c2d4Da6e2D19E2A39ee6eb",
+      "poolWithUSDT10000": "0x41D438DAfD6C4Eff60907ADF1906Ec8AaBf5C6eF",
+      "initPrice": "13734151125874862636532262838872"
+    },
+    "PPI": {
+      "token": "0x49916ba65d0048c4bbb0a786a527d98d10a1cd2d",
+      "poolWithUSDT500": "0x379Fca5ca034678eefB366Fd778711Ce59c23C72",
+      "poolWithUSDT3000": "0x98D7d5997F37D736199310B5687d0e8bc33CC889",
+      "poolWithUSDT10000": "0xcC4CbC730A944FC22fe8326CA96354a16c32c1f5",
+      "initPrice": "15003200000000000000000000000"
+    },
+    "VST": {
+      "token": "0x2c0230516cfcddcd2a5256400c4593deaa243259",
+      "poolWithUSDT500": "0xF7754F59906Ca54d2fdE318a458fF2f1166e45E0",
+      "poolWithUSDT3000": "0xb99983baDa4643f78cE4c5c6a26cd9eD8467Bc94",
+      "poolWithUSDT10000": "0x2C092796a6B75496F9E123706011FF36963Ee440",
+      "initPrice": "177159557114295710296101716160"
+    }
+  },
+  "Farming": {
+    "VSTWCFX10000": {
+      "pool": "0x82d0bDef2d0c1828224d849bF1fEbF4652e4EBA8",
+      "allocPoint": 800,
+      "pid": 0
+    },
+    "VSTUSDT10000": {
+      "pool": "0x2C092796a6B75496F9E123706011FF36963Ee440",
+      "allocPoint": 600,
+      "pid": 1
+    },
+    "WCFXUSDT3000": {
+      "pool": "0x5579eb5927ff51c9d790404162c951f0fffa2d42",
+      "allocPoint": 600,
+      "pid": 2
+    },
+    "VSTNT013000": {
+      "pool": "0x15b62bbccdf81cd113f8ba65747c0683f898a7f8",
+      "allocPoint": 200,
+      "pid": 4
+    },
+    "VSTNT023000": {
+      "pool": "0xdab0acb041247f90d5e5891d76cc536f72b5c54a",
+      "allocPoint": 200,
+      "pid": 5
+    },
+    "ETHWCFX3000": {
+      "pool": "0x4381A9B9203d46089c2d45f566eC53d7e7Fcf016",
+      "allocPoint": 400,
+      "pid": 6
+    },
+    "USDCUSDT500": {
+      "pool": "0xcd841edf917be1d8b67a98ebe040d79c3609f916",
+      "allocPoint": 1200,
+      "pid": 7
+    }
+  },
+  "UniswapInterfaceMulticall": "0x19111c3c4bc770cce51cfd7509aa79e2a2758384",
+  "UniswapV3QuoterV2": "0xb9ba9e3b2f9c56a1d80ca474c71537e0cdc5f4d3",
+  "UniswapV3systemdistribute": "0x09b68fdd0ffaa86518bbacd63c78b5e438df7ad0",
+  "AET1": "0xaF30D3840dBAc5011AFD1479C0f02ec6359Cd26C",
+  "AET2": "0x32A9735E96d1Fd9782CcCDA146188Fb85B1De1c7",
+  "AET3": "0x598D522633b5D6eCaC31E8C274e87dc15e51C6f7",
+  "AET4": "0xd9A35281889E258E1836feD23cE27Cb88e576232",
+  "SwappiFactoryWeighted": "0xa47ee43b81d718ea0d607d6446890b15fe004a6d",
+  "SwappiRouterWeighted": "0x9aec17d3323fe43a409c667e84d022268e40c68a",
+  "WeightedWCFXUSDT": "0x2404fa6100a31a30e98e58eeb37359eabbb251ea",
   "NUT": "0x48EE76131e70762DB59a37e6008ccE082805aB00",
   "XCFX": "0x092690013ef7aF87eaf45030906baa86b8fAA411",
   "NUTWCFX": "0x63c853b6735A61F6035984E805b6e41Cff1084cB",
