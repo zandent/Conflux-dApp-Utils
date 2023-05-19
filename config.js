@@ -6,7 +6,7 @@ if (typeof(_privateKey) == "undefined") {
 const specs = {
     privateKey: _privateKey,
     network: 'espacetestnet',
-    nodeUrl: 'http://evmtestnet.confluxrpc.com/${process.env.INFURA_API_KEY}',
+    nodeUrl: `http://evmtestnet.confluxrpc.com/${process.env.INFURA_API_KEY}`,
     // network: 'espace',
     // nodeUrl: `http://evm.confluxrpc.com/${process.env.INFURA_API_KEY}`,
     apikey: process.env.ETHERSCAN_API_KEY,
