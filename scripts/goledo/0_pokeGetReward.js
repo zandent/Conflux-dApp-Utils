@@ -13,7 +13,7 @@ const POKEPERIOD = 86400; // 1 day 86400
 const CHECKPERIOD = 3600000; // 1 hour 3600000
 let contract = require(`../../ABIs/goledo/MultiFeeDistribution.sol/MultiFeeDistribution.json`);
 contract.instance = new w3.eth.Contract(contract.abi);
-contract.instance.options.address = addresses.MultiFeeDistribution;
+contract.instance.options.address = addresses.MultiFeeDistributionV2;
 async function ethTransact(data, to = undefined, nonce, key, sender, value = 0) {
   let gasPrice = BigNumber.from(await w3.eth.getGasPrice());
   gasPrice = gasPrice.mul(110).div(100).toString();
@@ -44,18 +44,15 @@ async function run() {
   let lastTime = lastestBlk.timestamp;
   let currentTime = lastestBlk.timestamp;
   let nonce = await w3.eth.getTransactionCount(account);
-  data = contract.instance.methods.getReward([addresses.GoledoToken, addresses.Markets['CFX']['atoken'], addresses.Markets['USDT']['atoken'], addresses.Markets['WETH']['atoken'], addresses.Markets['WBTC']['atoken']]).encodeABI();
-  try {
-    await ethTransact(data, contract.instance.options.address, nonce, specs.privateKey, account);
-  } catch (error) {
-    console.log(">> getReward() Failed. Resume next cycle.");
-  }
+  data = contract.instance.methods.getReward([addresses.GoledoTokenV2, addresses.Markets['CFX']['atoken'], addresses.Markets['USDT']['atoken'], addresses.Markets['WETH']['atoken'], addresses.Markets['WBTC']['atoken'], addresses.Markets['USDC']['atoken'], addresses.Markets['xCFX']['atoken'], addresses.Markets['NUT']['atoken']]).encodeABI();
+
+  await ethTransact(data, contract.instance.options.address, nonce, specs.privateKey, account);
   nonce = nonce + 1;
   console.log(">> ✅ getReward() Done.");
+  
   let failflag = false;
   while (1) {
     if (currentTime - lastTime > POKEPERIOD) {
-      data = contract.instance.methods.getReward([addresses.GoledoToken, addresses.Markets['CFX']['atoken'], addresses.Markets['USDT']['atoken'], addresses.Markets['WETH']['atoken'], addresses.Markets['WBTC']['atoken']]).encodeABI();
       try {
         await ethTransact(data, contract.instance.options.address, nonce, specs.privateKey, account);
         failflag = false;

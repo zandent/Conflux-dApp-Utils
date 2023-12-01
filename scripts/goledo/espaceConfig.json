@@ -87,6 +87,57 @@
           "decimals": 6,
           "timeout": 172800
         }
+      },
+      "xCFX": {
+        "token": "0x889138644274a7dc602f25a7e7d53ff40e6d0091",
+        "decimals": 18,
+        "atoken": "0x06fB6757aa45E317FED3188144bcB0b72F2e7bB7",
+        "stoken": "0x45Ee411bfb5B6c560015b0948612aEE0E9945D27",
+        "vtoken": "0x1B404f905048AC3091B0F6c6E45A3212b24261Bc",
+        "oracle": "0x37dB91B7604397c23B5b4FD1f1d3b1114e7534D1",
+        "DefaultReserveInterestRateStrategy": "0xfC49C4DC6638760Bfc5E723819F6044ae5a28528",
+        "witnetConfig": {
+          "assetId": "0x65784185a07d3add5e7a99a6ddd4477e3c8caad717bac3ba3c3361d99a978c29",
+          "decimals": 6,
+          "timeout": 7200
+        }
+      },
+      "USDC": {
+        "token": "0x6963efed0ab40f6c3d7bda44a05dcf1437c44372",
+        "decimals": 18,
+        "atoken": "0xF20e046689AdF30711A67afF975F16D47FE72abA",
+        "stoken": "0x2f894dBAc081be567B317DA24a43125ACF2CA8E1",
+        "vtoken": "0x7e03D111D7d2819Ab19BF326518f54D8e0920E28",
+        "oracle": "0x6FA8aa3f161bCb8CdA78114001F632cf57b8c047",
+        "DefaultReserveInterestRateStrategy": "0x58Aa57f01f6CD5FA64B6F682F267Ef490f840224",
+        "witnetConfig": {
+          "assetId": "0x4c80cf2e5b3d17b98f6f24fc78f661982b8ef656c3b75a038f7bfc6f93c1b20e",
+          "decimals": 6,
+          "timeout": 172800
+        }
+      },
+      "NUT": {
+        "token": "0xfe197e7968807b311d476915db585831b43a7e3b",
+        "decimals": 18,
+        "atoken": "0xcbA81566c4d9cD22F685FC77D0739cb5e4571208",
+        "stoken": "0x25f0CAEA170D1e3D4C20ED55677c605B4D712B32",
+        "vtoken": "0x550eE1e5d54E7c271D9Db7C27636D1e46D3C65dD",
+        "oracle": "0xCAe2Da4f39B4E1Cc5fdc9184c36D029Dbae7f575",
+        "DefaultReserveInterestRateStrategy": "0x0dbDD6aBb3eA3b26f108731907F14984a6EfC653",
+        "witnetConfig": {
+          "assetId": "0x65784185a07d3add5e7a99a6ddd4477e3c8caad717bac3ba3c3361d99a978c29",
+          "decimals": 6,
+          "timeout": 7200
+        }
       }
-    }
+    },
+    "ATokenImplV2": "0xD12dFc7F12a4Ccd93BAe3FA91a90fb84B30049Ce",
+    "StableDebtTokenImplV2": "0x6b69Fc5d2DcE1C37e0E6716ee4a83a62fAEAbEa4",
+    "VariableDebtTokenImplV2": "0xfeabF90E77FB35AdF6159B2D1238B8D4470fD349",
+    "SwappiLPV2": "0x157D7fCcF8067eb1444c5D57b063b1F1D8C903Ad",
+    "IncentiveDataProviderV2": "0x509Cb432d2fb377b551AB87C6e6C89E0243eE69F",
+    "GoledoTokenV2": "0x19aae9e4269ab47ff291125b5c0c2f7296a635ab",
+    "MultiFeeDistributionV2": "0x38f920f5c6ac95fc5fe768917fd43893dd9f7ad5",
+    "ChefIncentivesControllerV2": "0x5dc526bcbe999603ab6ad9d854ccad5b3ca54cfa",
+    "MasterChefV2": "0x8ebd2628b281af64e67caac61984b19362af7cff"
   }

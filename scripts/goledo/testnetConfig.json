@@ -88,5 +88,14 @@
         "timeout": 172800
       }
     }
-  }
+  },
+  "GoledoTokenV2": "0x49A43C8D7C8c8bF9925Cc39DC235CcAa2109e085",
+  "ATokenImplV2": "0x1D772288Cdfbe00C0D2e094109791a89481fFfD8",
+  "StableDebtTokenImplV2": "0xAdCfDE3Db05A23aB9ed638cc42A49D7F1165Bedf",
+  "VariableDebtTokenImplV2": "0x73705C74E47Ff81A0EDaebcfE0143C2DfC72f79f",
+  "MultiFeeDistributionV2": "0xfb83150789DD1EdECa5244c98e7aa4c028854341",
+  "ChefIncentivesControllerV2": "0x20FEac79E7400A343664ecA9CcCc796Fe1afDCd1",
+  "SwappiLPV2": "0x9f430d2475fF9148e276bEBDD3E5AcfeD1a89522",
+  "MasterChefV2": "0x47020a061fd056430bc7f3fe858828c780437723",
+  "IncentiveDataProviderV2": "0xcaD468Ea1F0b0973AB7f16eB63eDE44a078D7599"
 }
