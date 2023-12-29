@@ -44,7 +44,7 @@ async function run() {
   let lastTime = lastestBlk.timestamp;
   let currentTime = lastestBlk.timestamp;
   let nonce = await w3.eth.getTransactionCount(account);
-  data = contract.instance.methods.getReward([addresses.GoledoTokenV2, addresses.Markets['CFX']['atoken'], addresses.Markets['USDT']['atoken'], addresses.Markets['WETH']['atoken'], addresses.Markets['WBTC']['atoken'], addresses.Markets['USDC']['atoken'], addresses.Markets['xCFX']['atoken'], addresses.Markets['NUT']['atoken']]).encodeABI();
+  data = contract.instance.methods.getReward([addresses.GoledoTokenV2, addresses.Markets['CFX']['atoken'], addresses.Markets['USDT']['atoken'], addresses.Markets['WETH']['atoken'], addresses.Markets['WBTC']['atoken'], addresses.Markets['USDC']['atoken'], addresses.Markets['xCFX']['atoken'], addresses.Markets['NUT']['atoken'], addresses.Markets['PPI']['atoken']]).encodeABI();
 
   await ethTransact(data, contract.instance.options.address, nonce, specs.privateKey, account);
   nonce = nonce + 1;

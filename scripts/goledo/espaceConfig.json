@@ -129,6 +129,21 @@
           "decimals": 6,
           "timeout": 7200
         }
+      },
+      "PPI": {
+        "token": "0x22f41abf77905f50df398f21213290597e7414dd",
+        "decimals": 18,
+        "atoken": "0xC787d2F0AfeB8BacE0c3f8a7c8bBa7F237F382bA",
+        "stoken": "0x0033a4341a882014f3BEF427cd5D831aEffF74bF",
+        "vtoken": "0x113b13490Da683885aaEbc11194c1232248b7F0f",
+        "oracle": "0xd79d5C49FeD01d566C00B2F6eb61b4ADc135e935",
+        "SwappiPair": "0x1112a6c61a2eec4bd3aec78bd5bf3396bdd37d57",
+        "DefaultReserveInterestRateStrategy": "0x0Bda131E69255Ce768f25F3eC95E67e21797193C",
+        "pythConfig": {
+          "assetId": "0x8879170230c9603342f3837cf9a8e76c61791198fb1271bb2552c9af7b33c933",
+          "decimals": 8,
+          "timeout": 10800
+        }
       }
     },
     "ATokenImplV2": "0xD12dFc7F12a4Ccd93BAe3FA91a90fb84B30049Ce",
